@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="noselect">
+<head>
+	<!-- page title, listed in mission control on macOS -->
+	<title id="missctrltxt"></title>
+
+	<!-- import the main style sheet -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<!-- import the modal style sheet -->
+	<link rel="stylesheet" type="text/css" href="css/modal.css">
+
+	<!-- import the locally stored google material icons -->
+	<link rel="stylesheet" type="text/css" href="css/gIcons.css">
+	<noscript>how...?</noscript>
+</head>
+<body class="noselect" id="body" onbeforeunload="unloadRoutine()">
+<div id="clickblocker"></div>
+<div id="loader">
+	<img draggable="false" id="loadhero" width="256px" src="img/loader.png">
+	<span id="texthero">Bridgeport</span>
+	<span id="textbranding"><font face="PT Sans Narrow">&lt;/wayoutware&gt;</font></span>
+	<span id="devbranding">Starting...</span>
+</div>
+<div id="loaderfirmbg"></div>
+
+
+<div id="modalwindow">
+	<img id="modalImage" src="img/iconDark.png" draggable="false" width="32px">
+	<span id="modalTitle">modalTitle</span><br>
+	<span id="modalBody">modalBody</span><br>
+	<div id="modalButtonContainer">
+	<center>
+		<span id="modalButtonDeny">modalDeny</span>
+		<span id="modalButtonConfirm">modalConfirm</span>
+	</center>
+	</div>
+</div>
+<div id="modalbg"></div>
+
+<div id="all">
+
+<div id="llwrapper">
+	<div id="llltb"> Bridgeport </div>
+	<div id="llinner">
+			<h1 id="llheader">  </h1>
+			<img id="llpfp" height="96px" draggable="false"> <br><br>
+			<span id="llusername"></span> <br><br><br><br>
+			<input id="llpwbox" type="password">
+			<span id="llpwboxlabel">Enter your local passcode</span>
+			<span id="llcapswarn">Caps Lock is on</span>
+			<br><br><br>
+			<span class="material-icons noselect" style="font-size:32px;" onclick="llSubmit()" id="llsubmit">arrow_forward</span>			
+			<!-- <span id="llsubmit" onclick="llSubmit()"></span><br> -->
+	</div>
+	<div id="llwarnings">
+			<span id="llreset1">Forgot your passcode?</span> <span id="llreset2" onclick="actErase()">Log Out</span>
+		</div>
+	<div id="llerrorcover">
+		<span id="llerrorheader"> Bridgeport is disabled </span><br>
+		<span id="llerrorsubheader"> Try again soon </span>
+	</div>
+</div>
+
+<div id="superhotwrapper">
+		<span id="superhot" class="shNarrow">SUPER</span>
+</div>
+<div id="shbg"></div>
+
+
+<div id="titlebars">
+<!-- mac titlebars -->
+	<div id="darwin-title-bar" class="noselect" ondblclick="tParent()"> 
+		<span id="titletext">Bridgeport</span> 
+		<div id="goback" onclick="webview.goBack(), headerTitle()">
+			<span class="material-icons noselect" id="gobackicon" title="Navigate Back">keyboard_arrow_left</span>
+			<span id="gobackHack">Back</span>
+		</div>
+		
+		<span class="material-icons noselect" onclick="webview.goForward(), headerTitle()" id="gofwd" title="Navigate Forward">keyboard_arrow_right</span>
+	</div>
+
+	<div id="titleButtonImage"></div>
+	<div id="titleButtonWrapper">
+		<div id="pad"><div class="paddedtb" onclick="closeWin()" id="titleClose"></div> </div>
+		<div id="pad"><div class="paddedtb" onclick="theWindow.minimize();" id="titleMinimize"></div> </div>
+		<div id="pad"><div class="paddedtb" onclick="winMaximize();" id="titleMaximize"></div> </div>
+	</div>
+	<div id="triangle-bottomleft"></div>
+	<div id="triangle-topleft"></div>
+
+<!-- windows titlebars -->
+	<div id="windows-title-bar" class="noselect"> 
+		<span id="titletextwin">Bridgeport</span>
+		<div class="winbtn" id="winclosebtn" onclick="ipc.send('quit','hi')"><span class="material-icons winicon" style="font-size:22px;">close</span></div>
+		<div class="winbtn" id="winminbtn" onclick="theWindow.minimize()"><span class="material-icons winicon" style="font-size:22px;">minimize</span></div>
+	</div>
+	
+	<span class="material-icons noselect" onclick="webview.goBack(), headerTitle()" id="gobackwin" title="Navigate Back">arrow_back</span>
+
+
+<!-- back and forward buttons, forward only visible on macOS -->
+
+</div>
+<div id="winwindowborder"></div>
+
+<!-- notification popout -->
+<div id="npopoutmain"onclick="hideNotifications()" title="Click to mark notiications as read">
+	<div id="npopoutchild">
+	<span id="notificationcounter" class="notification-counter">0</span>
+		<span class="material-icons noselect" onclick="" id="npopouticon" >mail_outline</span>
+	</div>
+</div>
+
+
+<!-- webview process, popups are allowed, and it's using partition 1 as a persist. -->
+<webview id="c-agg" src="https://mobile.twitter.com/home" partition="persist:1" preload="scripts/preload-manager.js" style="transform: scale(1); pointer-events: auto;"></webview>
+
+<!-- useragent="Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1" -->
+
+<!-- backdrop so views like "compose tweet" aren't transparent and loading looks smoother on slower devices-->
+<div id="backdrop"></div>
+<div id="backdrop2"></div>
+
+<div id="sideicons">	<!-- the sidebar buttons -->
+		<img src="img/placeholder.png" width="32px" height="32px" id="profilepicture" onclick="profileImage(), invertShow()" oncontextmenu="showAccountMenu()" draggable="false"><br><br>
+		<a onclick="webview.loadURL('https://mobile.twitter.com/home'), barInvisible(), prefPaneHide(), webview.clearHistory(), invertShow()" title="Timeline">
+			<span class="material-icons noselect focusDM" style="font-size:32px;" id="homebtn">home</span></a>
+			<br class="noselect">
+			<br class="noselect">
+		<a onclick="webview.loadURL('https://mobile.twitter.com/explore'), barInvisible(), prefPaneHide(), webview.clearHistory(), invertShow()" title="Exlpore">
+			<span class="material-icons noselect" style="font-size:32px;" id="explorebtn">explore</span></a>
+			<br class="noselect">
+			<br class="noselect">
+		<a onclick="webview.loadURL('https://mobile.twitter.com/notifications'), barInvisible(), prefPaneHide(), webview.clearHistory(), invertShow()" title="Notifications">
+			<span class="material-icons noselect" style="font-size:32px;" id="notificationsbtn">notifications</span></a>
+			<br class="noselect">
+			<br class="noselect">
+		<a onclick="webview.loadURL('https://mobile.twitter.com/messages'), barInvisible(), prefPaneHide(), webview.clearHistory(), invertShow()" title="Messages">
+			<span class="material-icons sharp noselect" style="font-size:32px;" id="messagebtn">mode_comment</span></a>
+			<br class="noselect">
+			<br class="noselect">
+		<a onclick="webview.loadURL('https://mobile.twitter.com/i/bookmarks'), barInvisible(), prefPaneHide(), webview.clearHistory(), invertShow()" title="Bookmarks">
+			<span class="material-icons noselect" style="font-size:32px;" id="bookmarksbtn">bookmark</span></a>
+			<br class="noselect">
+			<br class="noselect">
+</div>
+	<img src="img/ibluemin.png" width="40px" height="32px" id="appicon" title="Bridgeport for Twitter">
+<div id="ppbtns">
+		<a onclick="prefPaneHide(), composeNewTweet()" title="New Tweet (⌘N)" id="newbutton" class="ppicon">
+			<span class="material-icons noselect" style="font-size:28px;" id="newbtn"></span></a>
+			<!-- <span class="material-icons noselect" style="font-size:32px;" id="newbtn">add</span></a> -->
+			<br><br>
+		<a onclick="barVisible(), prefPaneHide()" title="Search (⌘F)" id="searchbutton" class="ppicon">
+			<span class="material-icons noselect" style="font-size:30px;" id="searchbtn">search</span></a>
+			<br><br>
+		<a onclick="prefPaneShow(); barInvisible()" title="More Actions (⌘P)" id="morebutton" class="ppicon">
+			<span class="material-icons noselect" style="font-size:32px;" id="morebtn">expand_more</span></a>
+			<br><br>
+</div>
+<div id="prefpaneside">
+
+	<div class="ppitemside" onclick="prefPaneHide(), ppMessages(), invertShow()" style="font-size:32px;">
+		<span class="material-icons noselect ppiconside" title="New Direct Message(⇧⌘N)">add_comment</span>
+	</div> <br>	
+
+	<div class="ppitemside" onclick="copyToClipboard()" style="font-size:32px;">
+		<span class="material-icons noselect ppiconside" title="Copy to Clipboard(⇧⌘C)">insert_drive_file</span>
+	</div> <br>	
+
+	<div class="ppitemside" onclick="prefPaneHide(), promptPW()" style="font-size:32px;">
+		<span class="material-icons noselect ppiconside" title="Configure Local Password">lock</span>
+	</div> <br>
+	
+	<div class="ppitemside" onclick="prefPaneHide(), ppMe(), invertShow()" style="font-size:32px;">
+		<span class="material-icons noselect ppiconside" title="Manage my Twitter Account">account_box</span>
+	</div> <br>
+
+	<div class="ppitemside" onclick="prefPaneHide(), ppSettingsWindow()" style="font-size:32px;">
+		<span class="material-icons noselect ppiconside" title="Change App Settings">settings</span>
+	</div> <br>	
+
+</div>
+
+<div id="accountmenu">
+		<span id="mnuname" class="mnuheader" onclick="toast(loggedacct + ' is pretty neat')">@undefined</span>
+		<span class="mnuitem" onclick="actMyProfile()"> My Profile </span>
+		<span class="mnuitem" onclick="actLists()"> My Lists </span>
+		<span class="mnuitem" onclick="actLists()"> My Moments </span>
+		<span class="mnuitem" onclick="actLikes()"> My Likes </span>
+		<span class="mnuitem" onclick="actFollowing()"> Following </span>
+		<span class="mnuitem" onclick="actFollowers()"> Followers </span>
+		<hr>
+		<!-- <span class="mnuitem" onclick="actSettings()"> Bridgeport Preferences </span> -->
+		<span class="mnuitem" id="mnulock" onclick="liveLock()"> Lock </span>		
+		<span class="mnuitem" onclick="actProfile()"> Edit my Profile </span>
+		<span class="mnuitem logout mnulastitem" onclick="actErase()"> Logout </span>
+</div>
+
+<script>
+if (localStorage["password"] == "enabled"){
+	document.getElementById("mnulock").style.display = "block"
+} else{
+	document.getElementById("mnulock").style.display = "none"
+}
+</script>
+
+<div id="clipboardsuccess">
+	<span class="material-icons sharebtn">share</span> &nbsp;
+	<span class="cbtext">Successfully Copied URL</span>
+</div>
+
+<div id="toast" class="toastInactive">generic.error</div>
+
+<div id="searchbarcontainer">
+<span class="material-icons noselect" style="" id="searchicon" onclick="regSearch()" title="Click or Press Enter to search">
+	search
+</span>
+<input id="searchbar" class="searchbar" placeholder="Search... " autofocus>
+</div>
+
+<div id="searchbg" onclick="barInvisible()"></div>
+<div id="bluebar"></div>
+<div id="classicbar"></div>
+<div id="ppbg" onclick="prefPaneHide()"></div>
+<div id="ibtbg">
+	<img draggable="false" id="loadhero2" src="img/spinner.png">
+</div>
+</div> <!-- "all" div -->
+
+<div id="cmdbarcontainer">
+	<span class="material-icons noselect" style="font-size:28px;" id="cmdicon" onclick="commandSubmit()" title="Click or Press Enter to search">
+		search
+	</span>
+	<input id="cmdbar" class="searchbar" placeholder="What do you want to do?" autofocus>
+</div>
+
+<span id="dumpcollector"></span>
+
+<div id="sidepanel">
+<div id="side-title-bar"></div>
+<span class="material-icons noselect" onclick="panelHide()" id="spclose" title="Navigate Back">close</span>
+</div>
+
+
+<!-- various functions and modules -->
+<!-- <script src="scripts/head.js"></script>							things that should always be FIRST -->
+<script src="scripts/devload.js"></script>						<!-- output advanced loading information to splah -->
+<script src="scripts/currentversion.js"></script>				<!-- locally stored versions -->
+<script src="scripts/theme.js"></script>			 			<!-- handles css injection into twitter mobile site -->
+<script src="scripts/b-integration.js"></script> 				<!-- browser integration -->
+<script src="scripts/title.js"></script> 						<!-- handles the titlebar and mission control titles -->
+<script src="scripts/themedetector.js"></script>				<!-- handles theme for main app ui -->
+<script src="scripts/nodrop.js"></script>						<!-- prevents opening files on drag in, idk why it doesn't just do that. -->
+<script src="scripts/usrsrch.js"></script>						<!-- handles search -->
+<script src="scripts/firstrun.js"></script>						<!-- first run detection -->
+<script src="scripts/prefpane.js"></script>						<!-- preference pane functions-->
+<script src="scripts/windowshort.js"></script>					<!-- renderer side window manager -->
+<script src="scripts/bgupdatecheck.js"></script>				<!-- check for updates q u i e t l y -->
+<script src="https://bridgeportapp.github.io/cversion.js"></script>
+<script src="scripts/activefeature.js"></script>				<!-- detects active feature for sidebar -->
+<script src="scripts/intload.js"></script>						<!-- minor page load splash handling -->
+<script src="scripts/notificationbubble.js"></script>			<!-- notifications -->
+<script src="scripts/push.min.js"></script>						<!-- push library -->
+<script src="scripts/modal.js"></script>						<!-- bridgeport js modal manager -->
+<script src="scripts/sjcl-min.js"></script>						<!-- sjcl hash library -->
+<script src="scripts/passwordmanager.js"></script>				<!-- bridgeport js password manager -->
+<script src="scripts/accountmanager.js"></script>				<!-- bridgeport js account manager -->
+<script src="scripts/ipchandler.js"></script>					<!-- bridgeport js ipc manager -->
+<script src="scripts/bppanels.js"></script>						<!-- bridgeport js panels manager -->
+<script src="scripts/photohandler.js"></script>					<!-- bridgeport js external photo viewer -->
+<script src="scripts/dynamic.js"></script>						<!-- bridgeport js dynamics file -->
+<script src="scripts/command.js"></script>						<!-- bridgeport js command file -->
+<script src="scripts/superhot.js"></script>						<!-- cool superhot text effect -->
+<script src="scripts/history.js"></script>						<!-- bridgeport js history manager -->
+<script src="scripts/konami.js"></script>						<!-- easter egg -->
+<script src="scripts/livelock.js"></script>						<!-- locking live without reloading -->
+<script src="scripts/waywork.js"></script>						<!-- wayoutware waywork js kit -->
+<script src="scripts/launchthread.js"></script>					<!-- loading splash screen handling -->
+<script src="scripts/newbuild.js"></script>					<!-- loading splash screen handling -->
+<script src="scripts/spellcheck.js"></script>					<!-- loading splash screen handling -->
+<!-- <script src="scripts/bottom.js"></script>						things that should be done LAST -->
+<!-- <script src="scripts/spooky.js"></script> -->
+<script> localStorage["imgViewer"] = "disabled" </script> <!-- hooray hotfixes! -->
+</body>
+</html>

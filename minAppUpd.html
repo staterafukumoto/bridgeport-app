@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bridgeport Update Utility</title>
+	<link rel="stylesheet" type="text/css" href="css/about.css">
+</head>
+<body>
+<div id="darwin-title-bar-min" class="noselect">
+		<center>
+			<!-- <span> Bridgeport Update Utility </span> -->
+		</center>
+</div>
+<br>
+<center><h3 id="header"> Checking for Updates... </h3></center>
+<center> <span id="button" onclick="dl()"> Download Update </span> </center>
+
+<div id="backdrop"></div>
+<script src="scripts/nodrop.js"></script>			<!-- prevents opening files on drag in, idk why it doesn't just do that. -->
+<script src="scripts/updatechecker.js"></script>			<!-- checks against current version -->
+<script src="https://bridgeportapp.github.io/cversion.js"></script>
+<script src="scripts/currentversion.js"></script>
+<script>
+if (localStorage["auxTheme"] == "light"){
+	document.getElementById("backdrop").style.backgroundColor = "#111"
+} else{
+	document.getElementById("darwin-title-bar").style.borderBottom = "1px solid #a4a2a4"
+	document.getElementById("darwin-title-bar").style.background = "linear-gradient(#eceaeb, #d6d4d5)"
+	document.getElementById("darwin-title-bar").style.color = "black"
+	document.getElementById("header").style.filter = "invert(1)"
+	document.getElementById("backdrop").style.backgroundColor = "white"
+}
+</script>
+</body>
+</html>

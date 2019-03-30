@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="noselect">
+<head>
+	<!-- page title, listed in mission control on macOS -->
+	<title id="missctrltxt">Photo</title>
+
+	<!-- import the main style for the app -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<!-- import the google material icons -->
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+	<link rel="stylesheet" type="text/css" href="css/gIcons.css">
+</head>
+<body>
+
+<!-- app titlebar -->
+<div id="darwin-title-bar" class="noselect">
+	<!-- <div id="titletext" class="noselect">Image</div> -->
+</div>
+
+<div id="loadingDevBackground">
+	<!-- <div id="loadingDev"></div> -->
+	<img draggable="false" id="loadhero2" src="../img/spinner.png">
+</div>
+
+</div>
+
+<webview id="c-agg" partition="persist:1" preload="scripts/preload.js" ></webview>
+<div id="cbd"></div>
+
+<!-- importing javascript functions -->
+<script src="scripts/nodrop.js"></script>						<!-- prevents opening files on drag in, idk why it doesn't just do that. -->
+<script src="scripts/unibar.js"></script>						<!-- goes to a specific user page -->
+<script src="scripts/title.js"></script>						<!-- goes to a specific user page -->
+</body>
+</html>

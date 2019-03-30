@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bridgeport</title>
+	<link rel="stylesheet" type="text/css" href="css/secure.css">
+</head>
+<body>
+<div id="darwin-title-bar" class="noselect">
+		<center>
+			<span> 🔒 </span>
+		</center>
+</div>
+<div id="pwfield">
+	<h1> Enter a passcode </h1>
+	<span id="pwwarning"><font color="red"><b>Warning:</b></font> This is not your Twitter Password. <br> USE A UNIQUE PASSWORD HERE</span><br><br><br>
+    <input id="pwbox" type="password" autofocus placeholder="Think of a passcode"><br><br><br><br>
+	<input id="pwbox2" type="password" placeholder="Type it again"><br><br><br><br>
+	<span id="submit2" onclick="disablePW(), window.location.href = 'index.html '">Disable / Cancel</span>
+	<span id="submit" onclick="passwordCreateSubmit()">Confirm</span><br>
+	<span id="pwerror"><br><br><br><br> The passwords must match. </span>
+	
+</div>
+
+<script src="scripts/sjcl-min.js"></script>						<!-- sjcl hash library -->
+<script src="scripts/passwordmanager.js"></script>				<!-- bridgeport js password manager -->
+<script src="scripts/passwordmaker.js"></script>				<!-- bridgeport js password manager -->
+<script>
+var ipc = require('electron').ipcRenderer;
+</script>
+</body>
+</html>

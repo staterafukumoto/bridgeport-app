@@ -1,0 +1,477 @@
+*
+{
+  cursor: default;
+}
+
+body
+{
+  /*background: #3884ff;*/
+  /* background: #212121; */
+}
+
+
+#darwin-title-bar
+{ 
+  -webkit-app-region: drag;
+  height: 49px; 
+  width: 100%;
+  /* background: linear-gradient(#202a3d, #1e2126); */
+  background: #212121;
+  position: absolute;
+  left: 0px;
+  top: 0px; 
+  z-index: 3;
+  /*border-bottom: 1px solid #0084b4;*/
+  border-bottom: 1px solid #494949;
+  text-align:center !important;
+  z-index: 7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  animation: slideinTitleBar 0.3s;
+  line-height: 50px;
+  /* animation-timing-function: cubic-bezier(.87,-.41,.19,1.44); */
+}
+
+#titletext
+{
+  -webkit-app-region: drag;
+  position: relative;
+  width: calc(100% - 68);
+  background-color: #1da1f2;
+  left: 33px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont;
+  font-size: 14px;
+  line-height: 50px;
+  font-weight: regular;
+  display: none;
+}
+
+.noselect 
+{
+    user-select: none; 
+}
+
+#c-agg
+{
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  display:inline-flex;
+  z-index: 0;
+  transition: all ease 0.2s;
+  box-shadow: 0px 0px 20px white;
+  transform-origin: center center;
+}
+
+#cbd
+{
+  background: white;
+  position: absolute;
+  top: 38px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: calc(100% - 38px);
+  display:inline-flex;
+  z-index: -1;
+  transition: all ease 0.2s;
+  transform-origin: center center;
+}
+
+#backdrop
+{
+  position: absolute;
+  top: 22px;
+  bottom: 22px;
+  left: 68px;
+  width: calc(100% - 68px);
+  height: calc(100% - 23px);
+  display:inline-flex;
+  z-index: -1;
+  background: linear-gradient(#F5F8FA, white);
+}
+
+#close
+{
+  color: grey;
+  padding: 0px 0px;
+  line-height: 38px;
+  z-index: 8;
+  position: absolute;
+  left: 12px;
+  top: 5px;
+  animation: fadein 0.2s;
+  font-size:32px;
+  -webkit-app-region: no-drag;
+}
+
+#close:hover
+{
+  opacity: 0.4;
+  transition: all 0.2s ease;
+}
+
+#close:active
+{
+  transform:scale(0.8);
+  -webkit-text-stroke-width: 1px;
+  transition: all 0.1s ease;
+}
+
+#goforward
+{
+  color: white;
+  padding: 0px 0px;
+  line-height: 38px;
+  z-index: 8;
+  position: absolute;
+  left: 100px;
+  top: 0px;
+  animation: fadein 0.2s;
+  font-size:32px;
+  -webkit-app-region: no-drag;
+}
+
+#goforward:hover
+{
+  opacity: 0.4;
+  transition: all 0.2s ease;
+}
+
+#goforward:active
+{
+  transform:scale(0.8);
+  -webkit-text-stroke-width: 1px;
+  transition: all 0.1s ease;
+}
+
+#refresh
+{
+  color: white;
+  padding: 0px 0px;
+  line-height: 38px;
+  z-index: 8;
+  position: absolute;
+  right: 70px;
+  top: 1px;
+  font-size:32px;
+  -webkit-app-region: no-drag;
+}
+
+#openExternal
+{
+  color: white;
+  padding: 0px 0px;
+  line-height: 38px;
+  z-index: 8;
+  position: absolute;
+  right: 112px;
+  top: 1px;
+  font-size:32px;
+  -webkit-app-region: no-drag;
+}
+#openExternal:hover
+{
+  opacity: 0.4;
+  transition: all 0.2s ease;
+}
+
+#refresh:active
+{
+  transform:scale(0.7);
+  -webkit-text-stroke-width: 1px;
+  transition: all 0.1s ease;
+}
+
+
+
+a
+{
+    color: rgba(255, 255, 255, 0);
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: default;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+a:hover
+{
+  /*-webkit-text-stroke-color: #1DA1F2;*/
+  color: black;
+  transform: scale(1.05);
+  -webkit-text-stroke-width: 0px;
+  transition: all 0.2s ease;
+}
+
+a:active
+{
+  /*-webkit-text-stroke-color: #007ac6;*/
+  color: black;
+  transform:scale(0.9);
+  -webkit-text-stroke-width: 1px;
+  transition: all 0.1s ease;
+}
+
+.refresh:hover
+{
+  transform: rotate(360deg);
+  transition: all 0.8s ease;
+}
+
+@keyframes fadein
+{
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slidein
+{
+    from { top: 0px; }
+    to   { top: 38px; }
+}
+
+@keyframes slideinTitleBar
+{
+    from { top: -38px; }
+    to   { top: 0px; }
+}
+
+body
+{
+  /* animation: fadein 0.2s; */
+}
+
+#searchbarcontainer
+{
+  position:absolute;
+  top:38px;
+  background: #1da1f2; 
+  width: 100%;
+  left: 0px;
+  height: 38px;
+  display: none;
+  box-shadow: 0px 4px 50px black;
+  animation: slidein 0.15s;
+}
+
+::placeholder
+{ 
+  color:#ededed;
+  line-height: normal;
+}
+
+#urlbar
+{
+    left: 160px;
+    right: 160px;
+    top: 0px;
+    position: absolute;
+    height: 38px;
+    top: 2px;
+    font-family: -apple-system, BlinkMacSystemFont;
+    color: white;
+    /* background: red; */
+    background: transparent;
+    font-size: 14px;
+    text-align: center;
+    line-height: 34px;
+    transition: 0.3s all ease;
+    z-index: 44;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: none;
+}
+
+#bluebar
+{
+  position: absolute;
+  height:  100%;
+  width: 68px;
+  background: white;
+  z-index: -1;
+  left: 0px;
+  top: 0px;
+  opacity: 0;
+}
+
+#go
+{
+  color: white;
+  padding: 0px 0px;
+  line-height: 38px;
+  z-index: 8;
+  position: absolute;
+  right: 68px;
+  top: 1px;
+  font-size:32px;
+  -webkit-app-region: no-drag;
+}
+
+#goSearch
+{
+  color: white;
+  padding: 0px 0px;
+  line-height: 38px;
+  z-index: 8;
+  position: absolute;
+  right: 98px;
+  top: 1px;
+  font-size:32px;
+  -webkit-app-region: no-drag;
+}
+
+#gohome
+{
+  color: white;
+  padding: 0px 0px;
+  line-height: 38px;
+  right: 34px;
+  z-index: 8;
+  position: absolute;
+  top: 1px;
+  font-size:32px;
+  -webkit-app-region: no-drag;
+}
+
+#loading
+{
+  z-index: 5;
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 38px);
+  background: transparent;
+  bottom: 0px;
+  left: 0px;
+  display: none;
+  /*animation-name: grow;*/
+  /*animation-duration: 500ms;*/
+  pointer-events: none;
+}
+
+#load-anim
+{
+  position: absolute;
+  bottom: calc(50% - 20px);
+  left: calc(50% - 20px);
+  opacity: 0.7;
+}
+
+#loadtext
+{
+  font-family: -apple-system, BlinkMacSystemFont;
+  position: absolute;
+  display: inline-block;
+}
+
+@keyframes grow
+{
+    from { transform: scale(1.2); }
+    to   { transform: scale(1.0); }
+}
+
+.sk-cube-grid {
+  width: 40px;
+  height: 40px;
+  margin: 0px 0px;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #414141;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1); 
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  } 
+}
+
+#loadingDev
+{
+  position: absolute;
+  height: 12px;
+  width: 25%;
+  background: #1da1f2;
+  bottom: 0px;
+  animation: loadingElement 500ms ease-in-out 0ms infinite alternate;
+}
+
+#loadingDevBackground
+{
+  position: absolute;
+  height: 12px;
+  width: 100%;
+  background: #adadad;
+  bottom: 0px;
+  left: 0px;
+  display: none;
+  z-index: 44;
+}
+
+@keyframes loadingElement
+{
+    from { left: 0px; }
+    to   { left: 75%; }
+}
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>New Tweet</title>
+<link rel="stylesheet" type="text/css" href="css/compose.css">
+<link rel="stylesheet" type="text/css" href="css/gIcons.css">
+</head>
+<body>
+	
+	<div id="darwin-title-bar" class="noselect">
+		<center><span id="titletext">Compose Tweet</span></center>
+	</div>
+<span id="closebutton" class="material-icons noselect" onclick="window.close()">close</span>
+
+<webview id="tweet" src="https://mobile.twitter.com/compose/tweet" allowpopups partition="persist:1" preload="scripts/spellcheck.js"></webview>
+
+<div id="loader">
+	<img draggable="false" id="loadhero" src="img/spinner.png">
+</div>
+
+<div id="backdrop"></div>
+<script> var webview = document.getElementById("tweet")</script>
+<script>
+if (localStorage["theme"] == "dark"){
+	//do nothing
+}else{
+	document.getElementById("loader").style.background = "white"
+	document.getElementById("texthero").style.color = "black"
+}
+</script>
+<script src="scripts/tweetloadspinner.js"></script>
+<script src="scripts/windowshort.js"></script>
+<script src="scripts/composecheck.js"></script> 	
+</body>
+</html>

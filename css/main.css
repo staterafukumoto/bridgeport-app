@@ -1,0 +1,1683 @@
+#darwin-title-bar
+{ 
+  /* -webkit-app-region: drag; */
+  height: 38px;
+  line-height: 38px;
+  width: calc(100% - 68px);
+  left: 68px;
+  top: 0px; 
+  /* background: linear-gradient(#3f4142C8, #343536C8); */
+  background: #1c2936;
+  /* background: #212121; */
+  /*background:;*/
+  position: absolute;
+  z-index: 3;
+  border-bottom: 1px solid #141d26;
+  text-align: center;
+  z-index: 7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: 0.1s all ease;
+  /* transition: 0.3s all ease; */
+  backdrop-filter: blur(10px);
+  cursor: default;
+  /* box-shadow: 0px 0px 10px #111; */
+}
+
+#all
+{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  transition: 0.2s all ease;
+  /* cursor: default; */
+}
+
+#all:not(#c-agg)
+{
+  cursor: default;
+}
+
+.mdlvisible
+{
+  /* transform: scale(0.9); */
+  /* filter: grayscale(1); */
+  /* filter: blur(10px); */
+}
+
+#windows-title-bar
+{ 
+  -webkit-app-region: drag;
+  height: 31px;
+  line-height: 31px;
+  width: calc(100% - 2px);
+  left: 0px;
+  top: 0px; 
+  background: white;
+  position:absolute;
+  z-index: 3;
+  color: black;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent; 
+  text-align: center;
+  z-index: 7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transform: 0.1s all ease;
+  display: none;
+  font: "helvetica";
+}
+
+.winbtn
+{
+  width: 45px;
+  height: 32px;
+  top: 0px;
+  line-height: 31px;
+  /* background: red; */
+  -webkit-app-region: no-drag;
+  transition: 0.1s all ease;
+  font-weight: 100;
+}
+
+.winicon
+{
+  width: 45px;
+  height: 32px;
+  line-height: 31px;
+  /* background: red; */
+}
+
+#winclosebtn
+{
+  background: transparent;
+  position: absolute;
+  right: 0px;
+  line-height: 43px;
+  text-align: center;
+  cursor: default;
+}
+
+#winclosebtn:hover
+{
+  background: red;
+  color: black !important;
+}
+
+#winminbtn:hover
+{
+  background: #adadadc8;
+}
+
+#winminbtn
+{
+  background: transparent;
+  position: absolute;
+  right: 45px;
+  line-height: 40px;
+}
+
+#winwindowborder
+{
+  display: none;
+  background: transparent;
+  pointer-events: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  z-index: 99;
+  border: 1px solid #298ecc;
+}
+
+.dimtitlebtn
+{
+  background: #f0f0f0 !important;
+  border-color: #d0d0d0 !important;
+}
+
+.dimstatusbar
+{
+  /*background: #2c2c2c !important;*/
+  filter: brightness(0.8);
+  background: orange !important;
+  /* filter: brightness(1.2); */
+  /* filter: brightness(1); */
+}
+
+#titletext
+{
+  -webkit-app-region: drag;
+  position: absolute;
+  /* background-color: red; */
+  left: 65px;
+  right: 65px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  color: #f9f9f9;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  line-height: inherit;
+  font-weight: normal;
+  text-align: center;
+  pointer-events: none;
+  transition: 0.3s all ease;
+}
+
+#titletextwin
+{
+  -webkit-app-region: drag;
+  position: absolute;
+  /* background-color: teal; */
+  width: calc(100% - 200px);
+  left: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  color: black;
+  display: none;
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  line-height: 31px;
+  text-align: left;
+  pointer-events: none;
+  z-index: 40;
+}
+
+#classicbar
+{
+  background: linear-gradient(#01c9ff, #21a4dc);
+  height: 37px;
+  top: 0px;
+  left: 0px;
+  width: 68px;
+  border-bottom: 1px solid #1e2028;
+  position: absolute;
+  display: none;
+}
+
+#titleButtonWrapper
+{
+  position: absolute;
+  float: left;
+  /*background: green;*/
+  z-index: 70;
+  top: 6px;
+  left: 9px;
+  -webkit-app-region: no-drag;
+  cursor: default;
+  transition: 0.3s all ease;
+  animation: fadein 0.2s;
+}
+
+#titleButtonWrapper:hover
+{
+  background-image: url('btnWindow.png');
+  background-size: 100%;
+}
+
+#titleButtonImage
+{
+  position: absolute;
+  display: none;
+  z-index: 71;
+  top: 6px;
+  left: 9px;
+  cursor: default;
+  width: 57px;
+  height: 12px;
+  pointer-events: none;
+  background-size: 100%;
+  background-image: url('btnWindow.png');
+  opacity: 0.7;
+}
+
+#titleButtonImage:hover
+{
+  background-image: url('btnWindow.png');
+
+}
+
+#titleClose
+{
+  background: #FB5753;
+  border-color: #d1362f;
+}
+
+#titleMinimize
+{
+  background: #FDBB3F;
+  border-color: #cf910a;
+}
+
+#titleMaximize
+{
+  background: #2ED54B;
+  border-color: #059d19;
+}
+
+/*#titleClose:hover, #titleMinimize:hover, #titleMaximize:hover
+{
+  filter: brightness(0.7);
+}*/
+
+#titleClose:active, #titleMinimize:active, #titleMaximize:active
+{
+  filter: brightness(0.6);
+}
+
+#titleClose, #titleMinimize, #titleMaximize
+{
+  width: 10px;
+  height: 10px;
+  border-radius: 6px;
+  /*transition: all 0.1s ease;*/
+  float: left;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+}
+
+#pad
+{
+  float: left;
+  padding-right: 7px;
+}
+
+.titleGrey
+{
+  background: #9b9ba1 !important;
+  border-color: #9b9ba1 !important;
+}
+
+.titanic
+{
+  float: none;
+  z-index: -12500;
+}
+
+
+.noselect 
+{
+    user-select: none; 
+}
+
+#c-agg
+{
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 68px;
+  right: 0px;
+  /* width: calc(100% - 68px); */
+  /*height: calc(100% - 38px);*/
+  height: 100%;
+  display:inline-flex;
+  z-index: 0;
+  /* transition: all ease 0.3s; */
+  transition: 0.4s all cubic-bezier(.87,-.41,.19,1.44);
+  transform: scale(1);
+}
+
+
+#backdrop
+{
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 68px;
+  height: 100%;
+  display:inline-flex;
+  z-index: 3;
+  /* background: #263240; */
+  background: #141d26;
+  transition: 0.3s all ease;
+  /* -webkit-app-region: drag; */
+}
+
+#backdrop2
+{
+  position: absolute;
+  top: 0px;
+  /* left: 68px; */
+  left: 0px;
+  right: 0px;
+  /*width: 100%;*/
+  height: 100%;
+  display:inline-flex;
+  z-index: -1;
+  background: #1b2835;
+  transition: 0.3s all ease;
+}
+
+#goback
+{
+  color: white;
+  padding: 0px 0px;
+  line-height: 38px;
+  z-index: 8;
+  position: absolute;
+  left: 2px;
+  top: 1px;
+  animation: backIn 0.2s ease 0s;
+  font-size:32px;
+  -webkit-app-region: no-drag;
+  cursor: default;
+  display: none;
+  visibility: hidden;
+  z-index: 999;
+  transition: 0.3s all ease;
+  opacity: 0.7;
+  /* background: lime; */
+  /* animation-direction: reverse; */
+}
+
+#gobackHack
+{
+  font-size: 14px;
+  line-height: 36px;
+  position: absolute;
+  top: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  display: inline;
+  -webkit-app-region: no-drag;
+  /* background: red; */
+}
+
+@keyframes backIn
+{
+    from { left: 20px; opacity: 0;}
+    to   { left: 2px; opacity: 0.7;}
+}
+
+#goback:hover
+{
+  opacity: 0.8;
+}
+
+#goback:active
+{
+  /* transform:scale(0.8); */
+  opacity: 1;
+  /* -webkit-text-stroke-width: 1px; */
+}
+
+#gobackwin
+{
+  color: white;
+  padding: 0px 0px;
+  line-height: 38px;
+  z-index: 8;
+  position: absolute;
+  left: 70px;
+  top: 1px;
+  animation: fadein 0.2s;
+  font-size:32px;
+  display: none;
+  -webkit-app-region: no-drag;
+  cursor: default;
+  transition: all 0.2s ease;
+  z-index: 999;
+  transition: 0.3s all ease;
+}
+
+#gofwd
+{
+  color: white;
+  padding: 0px 0px;
+  line-height: 38px;
+  z-index: 8;
+  position: absolute;
+  right: 2px;
+  top: 1px;
+  animation: fadein 0.2s;
+  font-size:32px;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  display: none;
+  transition: all 0.2s ease;
+  visibility: hidden;
+
+}
+
+#gofwd:hover
+{
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+#gofwd:active
+{
+  /* transform:scale(0.8); */
+  -webkit-text-stroke-width: 1px;
+}
+
+#refresh
+{
+  color: white;
+  padding: 0px 0px;
+  line-height: 38px;
+  z-index: 8;
+  position: absolute;
+  right: 2px;
+  top: 1px;
+  font-size:32px;
+  -webkit-app-region: no-drag;
+}
+
+#refresh:active
+{
+  transform:scale(0.7);
+  -webkit-text-stroke-width: 1px;
+  transition: all 0.1s ease;
+}
+
+
+a
+{
+    color: transparent;
+    padding: 0px 0px;
+    padding-left: 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: default;
+    -webkit-text-stroke-width: 1px;
+    transition: 0.3s all ease;
+    border-left-width: 0px;    
+
+}
+
+
+
+#searchbutton:active
+{
+  transform: scale(1) !important;
+}
+
+/*a:hover
+{
+  color: white !important;
+  transform: scale(1.05);
+  -webkit-text-stroke-width: 1px;
+  transition: all 0.2s ease;
+}*/
+
+a:active
+{
+  transform:scale(0.9);
+}
+
+.refresh:hover
+{
+  transform: rotate(360deg);
+  transition: all 0.8s ease;
+}
+
+#sideicons
+{
+  position: absolute;
+  left: 18px;
+  top: 32px;
+  transition: 0.3s all ease;
+  -webkit-text-stroke-color: white;
+  /* top: calc(50% - 170px); */
+  z-index: 4;
+}
+
+#logout
+{
+  position:absolute;
+  bottom: 2px;
+  left: 22px;
+  color: black;
+  line-height: 18px;
+  -webkit-text-stroke-width: 0px;
+}
+
+#logout:hover
+{
+  color: red;
+}
+
+#logout:active
+{
+  color: #590000;
+  transition: all 0.1s ease;
+}
+
+#newbar
+{
+  height: 32px; 
+  width: calc(100% - 68px);
+  /*background: linear-gradient(#1dcaff, #00aced);*/
+  background: #00aced;
+  position:absolute;
+  left: 68px;
+  bottom: 0px; 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  line-height:32px;
+  z-index: 3;
+  border-top: 1px solid #adabad;
+  text-align: center;
+  color: white;
+  cursor: default;
+}
+
+#newbar:hover
+{
+  /*background: linear-gradient(#14a2ce, #0099d1);*/
+  background: #0099d1;
+  transition: all 0.2s ease;
+}
+
+#newbar:active
+{
+  /*background: linear-gradient(#0f8aaf, #0084b5);*/
+  background: #0084b5;
+  transition: all 0.2s ease;
+}
+
+@keyframes fadein
+{
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slidein
+{
+    from { top: 0px; transform: scale(0.95); opacity: 0;}
+    to   { top: 60px; transform: scale(1); opacity: 1;}
+}
+
+@keyframes slidein2
+{
+    from { bottom: 0px; opacity: 0; transform: scale(0.95); }
+    to   { top: inherit; opacity: 1;transform: scale(1); }
+}
+
+@keyframes allslide
+{
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+body
+{
+  /* animation: fadein 0.3s; */
+  overflow: hidden;
+}
+
+/*#searchbarcontainer
+{
+  position:absolute;
+  top:38px;
+  background: #343536;  
+  width: calc(100% - 68px);
+  left: 68px;
+  height: 38px;
+  display: none;
+  animation: slidein 0.15s;
+  z-index: 2;
+  border-bottom: 1px solid #1e2028;
+}*/
+
+#searchbarcontainer
+{
+  position:absolute;
+  top: 70px !important;
+  /* transition: 0.3s all ease; */
+  transition: 0.4s all cubic-bezier(.87,-.41,.19,1.44);
+  /* width: calc(90% - 68px); */
+  left: calc(5% + 68px);
+  right: 5%;
+  height: 38px;
+  z-index: 2;
+  border-radius: 6px;
+  transform: scale(0.9);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.searchbaractive
+{
+  top: 70px !important;
+  transform: scale(1) !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+#searchicon
+{
+  color: #ededed;
+  position: absolute;
+  /* top: 6px; */
+  line-height: 38px;
+  cursor: default;
+  left: 10px;
+  display: inline;
+  font-size:22px;
+}
+
+::placeholder{ background-filter:invert(1); }
+
+/*#searchbar
+{
+    width: 80%;
+    height: 38px;
+    font-family: -apple-system, BlinkMacSystemFont;
+    color: white;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    resize: none;
+    text-align: center;
+}*/
+
+#searchbar
+{
+    width: calc(100% - 50px); 
+    position: absolute;
+    left: 40px;
+    right: 10px;
+    top: 0px;
+    bottom: 0px;
+    background: transparent;
+    /* background: red; */
+    height: 38px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif, 'Material Icons';
+    color: white;
+    font-size: 16px;
+    border: none;
+    resize: none;
+    /* text-align: center; */
+    text-align: left;
+}
+
+#searchbar:focus
+{
+  outline:none;
+}
+
+#bluebar
+{
+  position: absolute;
+  height:  calc(100% - 38px);
+  width: 68px;
+  background: transparent;
+  backdrop-filter: invert(1);
+  z-index: 4;
+  left: 0px;
+  top: 38px;
+  opacity: 0;
+  pointer-events: none;
+  display: none
+}
+
+#searchbg
+{
+  position: absolute;
+  background: #1b28359f;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  left: 0px;
+  top: 38px;
+  opacity: 0;
+  z-index: 1;
+  transition: 0.4s all cubic-bezier(.87,-.41,.19,1.44);
+  pointer-events: none;
+}
+
+.bgActive
+{
+  backdrop-filter: brightness(90%);
+  opacity: 1;
+  pointer-events: auto !important;
+}
+
+.bgActiveUA
+{
+  backdrop-filter: blur(3px);
+  opacity: 1;
+  pointer-events: auto !important;
+}
+
+@keyframes grow
+{
+    from { height: 0px; }
+    to   { height: 100%; }
+}
+
+@keyframes fadeintwo
+{
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#prefpaneside
+{
+  position: absolute;
+  left: 22px;
+  bottom: -290px;
+  color: white;
+  cursor: default;
+  text-align: center;
+  /* display: none; */
+  transition: 0.3s all ease;
+  z-index: 20;
+}
+
+/* #ppbtns
+{
+  position: absolute;
+  left: 18px;
+  bottom: 10px;
+  cursor: default;
+  transition: 0.3s all ease;
+  z-index: 20;
+} */
+
+#ppbtns
+{
+  transition: 0.3s all ease;
+}
+
+
+#morebutton
+{
+  position: absolute;
+  bottom: 10px;
+  left: 18px;
+  color: #707070;
+  -webkit-text-stroke-width: 0px;
+  transform: rotate(180deg);
+  transition: 0.3s all ease;
+  z-index: 22;
+}
+
+#searchbutton
+{
+  position: absolute;
+  bottom: 92px;
+  left: 18px;
+  color: #707070;
+  -webkit-text-stroke-width: 0px;
+  z-index: 22;
+  transition: all 0.3s ease !important;
+}
+
+.searchActive{
+  color: #01c9ff !important;
+  transform: scale(0.9);
+}
+
+#newbutton
+{
+  position: absolute;
+  bottom: 48px;
+  left: 20px;
+  /* left: 18px; */
+  color: #707070;
+  -webkit-text-stroke-width: 0px;
+  z-index: 22;
+  transition: all 0.3s ease !important;
+}
+
+#searchbutton:active
+{
+  transform: scale(1) !important;
+}
+
+/* 
+.focusDM
+{
+  color: transparent;
+  border-color: rgba(0,0,0,0);
+  border-style: solid;
+  padding-right: 11px;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  border-right-width: 4px;
+  border-right-color: white;
+} */
+
+.focusDM
+{
+  opacity: 1.0 !important;
+}
+
+.focuspfp
+{
+  /* box-shadow: 2px 2px 0px white, -2px -2px 0px white, -2px 2px 0px white, 2px -2px 0px white; */
+  box-shadow: 1px 1px 0px white, -1px -1px 0px white, -1px 1px 0px white, 1px -1px 0px white;
+}
+
+/*.focusDM:hover
+{
+  transform: scale(1);
+}
+*/
+/*.focusDM
+{
+  text-decoration: underline rgba(255,255,255,0.7);
+}
+*/
+
+/* @keyframes growInwards {
+    from {transform:scale(1.2); opacity: 0; filter: grayscale(100);}
+    to {transform:scale(1); opacity: 1; filter: grayscale(0);}
+} */
+
+@keyframes growInwards {
+    from {transform:scale(1.2); opacity: 0; filter: grayscale(100);}
+    to {transform:scale(1); opacity: 1; filter: grayscale(0);}
+}
+
+#loader
+{
+  position: absolute;
+  z-index: 73;
+  background: black;
+  /*backdrop-filter: blur(4px);*/
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  transition: 0.3s all ease;
+  cursor: default;
+  animation: growInwards 333ms ease-in-out;
+  /* animation: growInwards 750ms cubic-bezier(.87,-.41,.19,1.44); */
+  pointer-events: auto;
+}
+
+#loaderfirmbg
+{
+  position: absolute;
+  z-index: 72;
+  background: black;
+  /* background: #212123; */
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  pointer-events: auto;
+}
+
+#loadhero
+{
+  position: absolute;
+  width: 256px;
+  /* height: 256px; */
+  right: calc(50% - 128px);
+  bottom: calc(50% - 64px);
+  /* animation: spin 666ms cubic-bezier(.87,-.41,.19,1.44) 0.1s infinite; */
+  animation: bounce 233ms ease-out infinite alternate;
+  display: inline;
+}
+
+/*
+#loadhero
+{
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  right: calc(50% - 128px);
+  bottom: calc(50% - 64px);
+  animation: spin 850ms infinite ease;
+  display: inline;
+}
+*/
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+.titleimage
+{
+  padding-top: 4px;
+}
+
+#texthero
+{
+  font-family: -apple-system, BlinkMacSystemFont;
+  font-size: 32px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+  color: white;
+}
+
+#textbranding
+{
+  font-family: -apple-system, BlinkMacSystemFont;
+  font-size: 24px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 5%;
+  color: #298ecc;
+  /* color: white; */
+  /* animation: fadein 1s; */
+  /* display: none; */
+}
+
+#devbranding
+{
+  font-family: -apple-system, BlinkMacSystemFont;
+  font-size: 24px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 5%;
+  color: orange;
+  display: none;
+}
+/* the side icons */
+#homebtn,#explorebtn,#notificationsbtn,#messagebtn,#bookmarksbtn
+{
+  transition: 0.3s all ease;
+  z-index: 4;
+  opacity: 0.5;
+}
+
+@keyframes rainbow{ 5%{color: red;} 35%{color: yellow;} 65%{color: green;} 85%{color: blue;} 0%{color: orange;}}
+
+.rainbow 
+{
+  animation: rainbow 3s infinite; 
+}
+
+#ibtbg
+{
+  position: absolute;
+  background: #1b2835;
+  width: calc(100% - 68px);
+  height: 100%;
+  cursor: default;
+  left: 68px;
+  top: 0px;
+  display: inline;
+  /* animation: fadeintwo 0.20s; */
+  z-index: 1;
+  pointer-events: none;
+  display: none;
+}
+
+#loadhero2
+{
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  right: calc(50% - 16px);
+  bottom: calc(50% - 32px);
+  animation: spin 666ms infinite linear;
+  display: inline;
+}
+
+.notification-counter {   
+    position: absolute;
+    top: 3px;
+    left: 13px;
+    color: #fff;
+    background: #01c9ff;
+    font: 18px -apple-system,BlinkMacSystemFont;
+    pointer-events: none;
+    z-index: 5;
+    padding: 1px 2px;
+    border-radius: 999px;
+    font-weight: bolder;
+}
+
+#notificationcounter
+{
+  /* display: none; */
+}
+
+#npopoutmain
+{
+  position: absolute;
+  bottom: 0px;
+  right: -99px;
+  width: 75px;
+  height: 52px;
+  background: #01c9ff;
+  z-index: 23;
+  border-top-left-radius: 12px;
+  cursor: default;
+  user-select: none;
+  transition: 0.2s all ease;
+}
+
+#npopoutmain:hover{
+  opacity: 0.7;
+}
+
+#npopoutchild
+{
+  text-align: center;
+  font-size: 48px;
+  line-height: 52px;
+  color: white;
+}
+
+#npopouticon
+{
+  font-size: 48px;
+  line-height: 52px;
+}
+
+@keyframes notifyin
+{
+    from { transform: scale(0.5); }
+      to { transform: scale(1); }
+}
+
+#profilepicture
+{
+  border-radius: 4px;
+  transition: 0.3s all ease;
+  transition-property: all;
+  background: #212121;
+  color: transparent;
+  height: 32px;
+  width: 32px;
+  /* animation: shake 1s ease infinite; */
+}
+
+.shakeIcon
+{
+  animation: shake 0.2s ease 0s infinite;
+  box-shadow: 1px 1px 0px grey, -1px -1px 0px grey, -1px 1px 0px grey, 1px -1px 0px grey;
+}
+
+@keyframes shake
+{
+    0%    { transform: rotate(3.5deg)}
+    50%   { transform: rotate(-3.5deg)}
+    100%   { transform: rotate(0deg)}
+}
+
+#appicon
+{
+  position: absolute;
+  top: 40px;
+  left: 14px;
+  opacity: 0;
+  pointer-events: none;
+  background: #111;
+}
+
+#sidepanel
+{
+  position: absolute;
+  width: 500px;
+  height: 100%;
+  right: 0px;
+  top: 0px;
+  z-index: 25;
+  display: none;
+}
+
+#spwbv
+{
+  position: absolute;
+  width: 500px;
+  height: 100%;
+  right: 0px;
+  top: 38px;
+  z-index: 25;
+  border-left: 1px #adadad solid;
+}
+
+#side-title-bar
+{ 
+  -webkit-app-region: drag;
+  height: 38px;
+  line-height: 37px;
+  width: 500px;
+  right: 0px;
+  top: 0px; 
+  background: #212121c8;
+  position: absolute;
+  z-index: 9999;
+  border-bottom: 1px solid #191f24;
+  text-align: center;
+  z-index: 7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-left: 1px #adadad solid;
+
+}
+
+#spclose
+{
+  color: white;
+  padding: 0px 0px;
+  line-height: 38px;
+  z-index: 8;
+  position: absolute;
+  right: 468px;
+  top: 1px;
+  animation: fadein 0.2s;
+  font-size: 32px;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 9999;
+}
+
+#clipboardsuccess
+{
+  position: absolute;
+  bottom: 195px;
+  left: 72px;
+  background: #111111c8;
+  backdrop-filter: blur(5px);
+  width: 238px;
+  height: 38px;
+  color: white;
+  line-height: 38px;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 6px;
+  opacity: 0;
+  left: -328px;
+  transition: 0.3s all ease-in-out;
+}
+
+#toast
+{
+  position: absolute;
+  bottom: 68px;
+  right: 60px;
+  left: 128px;
+  background: #141d26;
+  color: white;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 24px;
+  transition: 0.3s all ease-in-out;
+  line-height: 26px;
+  font-size: 18px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: 0.4s all cubic-bezier(.87,-.41,.19,1.44);
+  z-index: 9999;
+}
+
+.toastActive
+{
+  transform: scale(1.0);
+  opacity: 1;
+}
+
+.toastInactive
+{
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+@keyframes toastin
+{
+    from { opacity: 0; transform: scale(1.6)}
+    to   { opacity: 1; transform: scale(1)}
+}
+
+.sharebtn
+{
+  padding-top: 7px;
+  padding-left: 6px;
+}
+
+.cbtext
+{
+  position: absolute;
+  line-height: 38px;
+  left: 38px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+#clickblocker
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  bottom: 0px;
+  background: transparent;
+  z-index: 66;
+}
+
+#accountmenu
+{
+  position: absolute;
+  width: 200px;
+  top: 50px;
+  left: 40px;
+  /* background: #191919; */
+  background: #141d26;
+  /* background: #212121; */
+  backdrop-filter: blur(5px);
+  border-radius: 6px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 55;
+  text-align: center;
+  transition: 0.2s ease;
+  transform: scale(0.6,0);
+  opacity: 0;
+  transform-origin: 10% 0%;
+  border: 1px solid #ededed72;
+  /* box-shadow: 0px 2px 5px #00000060; */
+}
+
+.mnuitem
+{
+  position: relative;
+  width: 100%;
+  color: #ededed;
+  padding-bottom: 9px;
+  padding-top: 9px;
+  cursor: default;
+  user-select: none;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.mnulastitem
+{
+  padding-bottom: 12px !important;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.mnuitem:hover
+{
+  /* transform: scale(1.1); */
+  /* text-decoration: underline; */
+  background: #edededc8;
+  color: black;
+  /* color: #01c9ff; */
+}
+
+.logout:hover
+{
+  background: #ff0000 !important;
+  color: black !important;
+}
+
+.logout
+{
+  color: red !important;
+  background: #ff000020;
+}
+
+.mnuheader
+{
+  color: white;
+  background: #ededed0f;
+  /* border-top-left-radius: 8px; */
+  /* border-top-right-radius: 6px; */
+  padding-bottom: 9px;
+  padding-top: 9px;
+  cursor: default;
+  user-select: none;
+  text-align: center;
+  display: block;
+  text-transform: lowercase;
+}
+
+/* @keyframes shake {
+  0% {transform: rotate(5deg);}
+  50% {transform: rotate(10deg);}
+} */
+
+
+#cmdbar
+{
+    width: 100%;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    color: white;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    resize: none;
+    text-align: left;
+}
+
+#cmdbar::placeholder
+{
+    /* color: #0084b5 !important; */
+    color: #adadad;
+}
+
+#cmdbar:focus
+{
+  outline: none;
+}
+
+#cmdbarcontainer
+{
+  position:absolute;
+  top: 0px;
+  left: 10px;
+  right: 10px;
+  height: 38px;
+  z-index: -2;
+  opacity: 1;
+}
+
+#cmdicon
+{
+  color: #ededed;
+  position: absolute;
+  left: 14px;
+  top: 6px;
+  cursor: default;
+  left: 4px;
+  display: none;
+}
+
+#dumpcollector
+{
+  display: none;
+}
+
+#superhotwrapper
+{
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  width: 100%;
+  pointer-events: none;
+  cursor: default;
+  text-align: center;
+  z-index: 99;
+  animation: superhot 500ms linear 0s both;
+  display: none;
+}
+
+#superhot
+{
+  /* display: none; */
+  font-size: 20vw;
+  color: white;
+  font-family: Roboto, Helvetica, sans-serif;
+  animation: superhot 500ms ease-in-out 0s both;
+  /* display: none; */
+  transform: scale(2);
+  text-transform: uppercase;
+}
+
+@keyframes superhot
+{
+    0%       { transform: scale(2); text-shadow: 0px 3px 0px; opacity: 1}
+    30%      { transform: scale(1.4); text-shadow: 0px 3px 0px; opacity: 1}
+    90%      { transform: scale(0.6); text-shadow: 0px 3px 10px #00ffff; opacity: 1; }
+    100%     { transform: scale(0.6); text-shadow: 0px 3px 50px #00ffff;  opacity: 0;}
+}
+
+.shNarrow
+{
+  font-weight: 100;
+}
+
+.shBold
+{
+  font-weight: bolder;
+}
+
+#shbg
+{
+  position: absolute;
+  z-index: 72;
+  background: black;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+#llwrapper
+{
+  position: absolute;
+  display: none;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: #141d26;
+  z-index: 23;
+  transition: 300ms all ease;
+}
+
+#llltb
+{
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  height: 22px;
+  background: #1b2835;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: light;
+  color: #ededed;
+  user-select: none;
+  cursor: default;
+  text-align: center;
+  line-height: 22px;
+  font-size: 14px;
+  z-index: 26;
+  /* box-shadow: 0px 0px 10px #111; */
+}
+
+#llinner
+{
+  position: absolute;
+  top: 120px;
+  bottom: 120px;
+  text-align: center;
+  width: 100%;
+  animation: lockIn 300ms ease-in-out;
+  transition: 300ms all ease;
+}
+
+#llerrorcover
+{
+  position: absolute;
+  top: 300px;
+  /* bottom: 120px; */
+  text-align: center;
+  width: 100%;
+  animation: lockIn 300ms ease-in-out;
+  display: none;
+}
+
+#llheader
+{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: light;
+  color: #ededed;
+  user-select: none;
+  cursor: default;
+}
+
+#llpfp
+{
+  border-radius: 6px;
+}
+
+#llusername
+{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: light;
+  color: #ededed;
+  user-select: none;
+  cursor: default;
+}
+
+#llpwbox
+{
+  position: absolute;
+  width: 300px;
+  left: calc(50% - 150px);
+  height: 25px;
+  font-size: 16px;
+  line-height: 25px;
+  color: #ededed;
+  background: transparent;
+  border: none;
+  resize: none;
+  text-align: left;
+  border-bottom: 2px solid grey;
+  transition: 0.3s all ease;
+}
+
+#llpwbox:focus
+{
+  outline:none;
+}
+
+#llsubmit
+{
+  color: #478dff;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 3px;
+  user-select: none;
+  cursor: default;
+  position: absolute;
+  top: 210px;
+  left: calc(50% +  120px);
+  transition: 0.3s all ease;
+}
+
+#llpwboxlabel
+{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+  position: absolute;
+  width: 300px;
+  left: calc(50% - 150px);
+  top: 190px;
+  height: 25px;
+  font-size: 16px;
+  line-height: 25px;
+  color: #478dff;
+  background: transparent;
+  border: none;
+  resize: none;
+  text-align: left;
+  transition: 0.3s all ease;
+  pointer-events: none;
+}
+
+#llwarnings
+{
+  position: absolute;
+  bottom: 68px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+}
+
+#llreset1
+{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+  color: #ededed;
+  font-size: 16px;
+}
+
+#llcapswarn
+{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+  color: red;
+  font-size: 16px;
+  display: none;
+}
+
+#llreset2
+{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+  color: #478dff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@keyframes lockIn
+{
+    from { transform: scale(0.9); opacity: 0;}
+    to { transform: scale(1); opacity: 1;}
+}
+
+@keyframes shake2 {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shakePW
+{
+  animation: shake2 0.5s; 
+  animation-iteration-count: infinite; 
+}
+
+#llerrorheader
+{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  font-size: 28px;
+}
+
+#llerrorsubheader
+{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  font-size: 22px;
+}
+
+#ppbg
+{
+  display: none;
+  opacity: 0;
+}

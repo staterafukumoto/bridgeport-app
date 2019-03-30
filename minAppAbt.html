@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Bridgeport</title>
+	<link rel="stylesheet" type="text/css" href="css/about.css">
+</head>
+<body>
+<div id="darwin-title-bar" class="noselect"></div><br>
+<img id="hero" src="img/iconDark.png" title="hello again, world :)" draggable="false" class="noselect">
+<p class="noselect" id="maintext">
+<b id="productname">Bridgeport</b><br>
+<span id="shortbuild"> </span>
+<br>
+<font face="PT Sans Narrow" id="brandtext">&lt;/wayoutware&gt;</font>
+<br><br>
+	Unofficial Twitter Lite client for macOS and
+<br>
+	What the official Twitter mac app could have been if they really believed in themselves
+<br>
+<br>
+
+</p>
+<br><br><br><br><br>
+<!-- build number gets placed here -->
+	<div id="ver_num" class="noselect">
+		<b>Build:</b> <span id="build">fetching...</span>
+	</div> <br>
+
+<script>
+	function write(){
+		document.getElementById("build").innerHTML = currentFullVersion
+		document.getElementById("shortbuild").innerHTML = currentShorthand
+		if(localStorage["isDev"] == "yes"){
+			document.getElementById("copyright").style.display = "inline"
+		} else{
+			document.getElementById("copyright").style.display = "none"			
+		}
+	}
+	window.setTimeout(write, 50)
+
+</script>
+
+
+
+<span id="copyright"> Developer Mode Enabled </span>
+<script src="scripts/currentversion.js"></script>
+<script src="scripts/nodrop.js"></script>						<!-- prevents opening files on drag in, idk why it doesn't just do that. -->
+<script>
+function focusCheck(){
+if (document.hasFocus()) {
+    document.getElementById("darwin-title-bar").classList.remove('dimstatusbar')
+} else{
+	document.getElementById("darwin-title-bar").classList.add('dimstatusbar')
+}
+}
+// window.setInterval(focusCheck,33)
+
+function themeSet(){
+	if (localStorage["auxTheme"] == "dark"){
+		//dark mode conditions	
+		document.getElementById("brandtext").style.color="white"
+		document.getElementById("shortbuild").style.color="white"
+		document.getElementById("productname").style.color="white"
+		document.getElementById("maintext").style.color="white"
+		document.getElementById("ver_num").style.color="white"
+		document.getElementById("darwin-title-bar").style.background="#212121"
+		document.getElementsByTagName("body")[0].style.background = "#212121"
+	} else{
+		//light mode conditions
+		document.getElementById("brandtext").style.color="black"
+		document.getElementById("shortbuild").style.color="black"
+		document.getElementById("productname").style.color="black"
+		document.getElementById("maintext").style.color="black"
+		document.getElementById("ver_num").style.color="black"
+		document.getElementById("darwin-title-bar").style.background="linear-gradient(#e5e4e5,#cecece)"
+		document.getElementsByTagName("body")[0].style.background = "#ededed"
+	}
+}
+
+window.setInterval(themeSet,250)
+themeSet()
+
+</script>
+
+
+</body>
+</html>

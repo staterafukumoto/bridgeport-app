@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bridgeport - Preferences</title>
+	<link rel="stylesheet" type="text/css" href="css/preferences.css">
+	<link rel="stylesheet" type="text/css" href="css/modal.css">
+	<link rel="stylesheet" type="text/css" href="css/gIcons.css">
+	<script> const shell = require('electron').shell; </script>
+</head>
+<body>
+<div id="darwin-title-bar" class="noselect">
+		<center>
+			<span> Bridgeport Preferences </span>
+		</center>
+</div>
+
+<div id="modalwindow">
+		<img id="modalImage" src="img/icondark.png" draggable="false" width="32px">
+		<span id="modalTitle">modalTitle</span><br>
+		<span id="modalBody">modalBody</span><br>
+		<div id="modalButtonContainer">
+		<center>
+			<span id="modalButtonDeny">modalDeny</span>
+			<span id="modalButtonConfirm">modalConfirm</span>
+		</center>
+		</div>
+	</div>
+	<div id="modalbg"></div>
+
+<div id="shadow"></div>
+<div id="all" class="fadein">
+<h1 id="appearanceheader"><span class="material-icons noselect">style</span> Looks</h1>
+<div id="seperator"></div><br>
+
+<h2 id="lmtext"> Themes </h2> <div onclick='openLMConfig()' class="toggle-firm"></div><br>
+<!-- <h2 id="lmtext2" onclick="openLMConfig()"> <u>Account Settings</u></h2><br><br> -->
+<h3> You will be taken to "Account Settings" to change themes </h3><br> <br>
+
+<h2 id="tbtext"> Blurring Effect </h2> <div onclick="" class="toggle-off" id="blurtoggle"></div> <br>
+<h3> Blurring effect in interface, might slow down older devices </h3><br> <br>
+
+<h2 id="grtext"> Grey Window Controls </h2> <div onclick="" class="toggle-off" id="greytoggle"></div> <br>
+<h3> Grey window Controls in the main window </h3><br> <br>
+
+<h2 id="retext"> Circular UI Elements* </h2> <div onclick="" class="toggle-off" id="roundedgestoggle"></div> <br>
+<h3> Circular user icons and buttons in UI </h3><br> <br>
+
+<h2 id="bftext"> Larger font* </h2> <div onclick="" class="toggle-off" id="bigfonttoggle"></div> <br>
+<h3> Makes UI font larger (16pt) </h3><br> <br>
+
+
+<!-- <h2 id="angtext"> Angled edge </h2> <div onclick="" class="toggle-off" id="angletoggle"></div> <br>
+<h3> Specifies whether to enable the subtle angle effect on the sidebar </h3><br> <br> -->
+
+<h1 id="functionheader"><span class="material-icons noselect">widgets</span> Functionality</h1>
+<div id="seperator2"></div><br>
+
+<h2 id="auctext"> Check for Updates Daily </h2> <div onclick="" class="toggle-off" id="updatetoggle"></div> <br>
+<h3> You can still check for updates manually from the menubar </h3><br> <br>
+
+<h2 id="pntext"> Show Patchnotes after Update </h2> <div onclick="" class="toggle-off" id="pntoggle"></div> <br>
+<h3> Automatically show the patchnotes window after you install an update </h3><br> <br>
+
+<h2 id="rptext"> Discord Rich Presence* </h2> <div onclick="" class="toggle-off" id="discordtoggle"></div> <br>
+<h3> Share your activity with your friends via Discord Rich Presence </h3><br>
+<h3> <i>(requires restart only to disable)</i> </h3><br> <br>
+
+<h2 id="iabtext"> Use System Browser by Default </h2> <div onclick="" class="toggle-off" id="iabtoggle"></div> <br>
+<h3> If enabled, Bridgeport will open links with the system browser </h3><br> <br>
+
+<!-- <h2 id="imgtext"> Popout Image Viewer </h2> <div class="beta">Beta</div> <div onclick="" class="toggle-off" id="imgtoggle"></div> <br>
+<h3> If disabled, Bridgeport will display images inline rather than externally  </h3><br> <br> -->
+
+<h2 id="notifytext"> Push Notifications* </h2> <div onclick="" class="toggle-off" id="ntfytoggle"></div> <br>
+<h3> The notification icon will still show a counter regardless. <span class="link" onclick="shell.openExternal('http://apps-of-a-feather.com')">Psst.</span> </h3> <br><br>
+
+<h2 id="restext"> Log out* </h2> <div onclick='resetWarn()' class="toggle-firm"></div> <br>
+<h3> Applies the default settings and logs you out of Twitter. </h3><br> <br>
+
+
+</div>
+<script src="scripts/nodrop.js"></script>						<!-- prevents opening files on drag in, idk why it doesn't just do that. -->
+<script src="scripts/prefWindow.js"></script>					<!-- preference window stuff. -->
+<script>
+function focusCheck(){
+	if (document.hasFocus()) {
+    document.getElementById("darwin-title-bar").classList.remove('dimstatusbar')
+} else{
+	document.getElementById("darwin-title-bar").classList.add('dimstatusbar')
+}
+}
+window.setInterval(focusCheck,16)
+</script>
+
+<span id="restart-warn">*Restart Required</span>
+<script src="scripts/modal.js"></script>
+<span id="restart-alert" onclick="restartNow()">Apply and Restart</span>
+<div id="backdrop"></div>
+<script>
+function themeSet(){
+		if (localStorage["auxTheme"] == "dark"){
+		document.getElementById("darwin-title-bar").style.borderBottom = "1px solid #191f24"
+		document.getElementById("darwin-title-bar").style.background = "linear-gradient(#434343,#373737)"
+		document.getElementById("darwin-title-bar").style.color = "white"
+		document.getElementById("restart-warn").style.filter = "invert(0)"
+		document.getElementById("seperator").style.filter = "invert(0)"
+		document.getElementById("grtext").style.filter = "invert(0)"
+		document.getElementById("seperator2").style.filter = "invert(0)"
+		// document.getElementById("imgtext").style.filter = "invert(0)"
+		document.getElementById("rptext").style.filter = "invert(0)"
+		document.getElementById("tbtext").style.filter = "invert(0)"
+		document.getElementById("backdrop").style.backgroundColor = "#323232"
+		document.getElementById("shadow").style.background = "linear-gradient(transparent, #323232,  #323232)"
+		document.getElementById("auctext").style.filter = "invert(0)"
+		document.getElementById("bftext").style.filter = "invert(0)"
+		document.getElementById("lmtext").style.filter = "invert(0)"
+		document.getElementById("retext").style.filter = "invert(0)"
+		document.getElementById("iabtext").style.filter = "invert(0)"
+		document.getElementById("restext").style.filter = "invert(0)"
+		document.getElementById("notifytext").style.filter = "invert(0)"
+		document.getElementById("pntext").style.filter = "invert(0)"
+	} else{
+		document.getElementById("darwin-title-bar").style.borderBottom = "1px solid #a4a2a4"
+		document.getElementById("darwin-title-bar").style.background = "linear-gradient(#eceaeb, #d6d4d5)"
+		document.getElementById("darwin-title-bar").style.color = "black"
+		document.getElementById("restart-warn").style.filter = "invert(1)"
+		document.getElementById("seperator").style.filter = "invert(1)"
+		document.getElementById("seperator2").style.filter = "invert(1)"
+		// document.getElementById("imgtext").style.filter = "invert(1)"
+		document.getElementById("grtext").style.filter = "invert(1)"
+		document.getElementById("rptext").style.filter = "invert(1)"
+		document.getElementById("tbtext").style.filter = "invert(1)"
+		document.getElementById("backdrop").style.backgroundColor = "#ececec"
+		document.getElementById("shadow").style.background = "linear-gradient(transparent, #ececec,  #ececec)"
+		document.getElementById("auctext").style.filter = "invert(1)"
+		document.getElementById("bftext").style.filter = "invert(1)"
+		document.getElementById("lmtext").style.filter = "invert(1)"
+		document.getElementById("retext").style.filter = "invert(1)"
+		document.getElementById("iabtext").style.filter = "invert(1)"
+		document.getElementById("restext").style.filter = "invert(1)"
+		document.getElementById("notifytext").style.filter = "invert(1)"
+		document.getElementById("pntext").style.filter = "invert(1)"
+	}
+}
+
+window.setInterval(themeSet,250)
+themeSet()
+
+function openLMConfig(){
+	ipc.send('lmtomain','hi')
+	window.close()
+}
+
+</script>
+</body>
+</html>

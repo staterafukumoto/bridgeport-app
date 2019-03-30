@@ -1,0 +1,167 @@
+#darwin-title-bar
+{ 
+  -webkit-app-region: drag;
+  height: 38px; 
+  width: calc(100%);
+  background-color: black;
+  /*background: linear-gradient(#eceaeb, #d6d4d5);*/
+  position:absolute;
+  left: 0px;
+  top: 0px; 
+  color:white;
+  font-family: -apple-system, BlinkMacSystemFont;
+  font-size: 14px;
+  line-height: 38px;
+  font-weight: regular;
+  z-index: 3;
+  /* border-bottom: 1px solid #515151; */
+  user-select: none;
+  cursor: default;
+}
+
+body
+{
+  background: black;
+}
+
+h1
+{
+    color: #adadad;
+    user-select: none;
+    cursor: default;
+}
+
+#pwwarning
+{
+    color: #ededed;
+    font-size: 12px;
+    user-select: none;
+    cursor: default;
+}
+
+#pwfield
+{
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    /* background: red; */
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    animation: growInwards 500ms ease-in-out;
+}
+
+
+#pwerrorcover
+{
+    position: absolute;
+    display: none;
+    user-select: none;
+    cursor: default;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: black;
+    color: red !important;
+    text-align: center;
+}
+
+#pwbox
+{
+    position: absolute;
+    width: 300px;
+    left: calc(50% - 150px);
+    height: 25px;
+    font-size: 22px;
+    line-height: 25px;
+    color: #ededed;
+    background: transparent;
+    border: none;
+    resize: none;
+    text-align: center;
+    border-bottom: 2px solid grey;
+    transition: 0.3s all ease;
+}
+
+#pwbox2
+{
+    position: absolute;
+    width: 300px;
+    left: calc(50% - 150px);
+    height: 25px;
+    font-size: 22px;
+    line-height: 25px;
+    color: #ededed;
+    background: transparent;
+    border: none;
+    resize: none;
+    text-align: center;
+    border-bottom: 2px solid grey;
+    transition: 0.3s all ease;
+}
+
+#pwbox:focus
+{
+  outline:none;
+  border-bottom: 2px solid #478dff;
+}
+
+#pwbox2:focus
+{
+  outline:none;
+  border-bottom: 2px solid #478dff;
+}
+
+#submit
+{
+    background: #478dff;
+    color: white;
+    padding: 12px 12px;
+    /* padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px; */
+    border-radius: 6px;
+    user-select: none;
+    cursor: default;
+}
+
+#submit2
+{
+    background: #ededed;
+    color: black;
+    padding: 12px 12px;
+    border-radius: 6px;
+    user-select: none;
+    cursor: default;
+}
+
+#pwerror
+{
+    color: red;
+    display: none;
+}
+
+@keyframes growInwards {
+    from {transform:scale(1.2); opacity: 0; filter: grayscale(100);}
+    to {transform:scale(1); opacity: 1; filter: grayscale(0);}
+}
+
+#body
+{
+    animation: grow 650ms ease;
+    user-select: none;
+    transition: 0.3s all ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+@keyframes grow {
+    from {transform: scale(1.2); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}

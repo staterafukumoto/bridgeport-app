@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- page title, listed in mission control on macOS -->
+	<title id="missctrltxt">Bridgeport Setup</title>
+
+	<!-- import the main style for the app -->
+	<link rel="stylesheet" type="text/css" href="fr.css">
+
+	<!-- modal style sheet -->
+	<!-- <link rel="stylesheet" type="text/css" href="../css/modal.css"> -->
+
+	<!-- import the google material icons -->
+	<!-- <link rel="stylesheet" type="text/css" href="../css/gIcons.css"> -->
+
+</head>
+<body>
+<!-- titlebar -->
+<div id="darwin-title-bar" class="noselect"> <span id="titletext"> &lt;setup&gt; </span></div>
+<img id="logo" src="../img/wordmark.png" draggable="false" height="48px">
+
+<!-- slides -->
+<div id="all1">
+    <center>
+        <h1 class="noselect" style="color: #707070;">You'll be up and running in no time</h1>
+        <iframe id="eulatext" frameborder="none" src="eula.html"></iframe><br>
+         <span id="eulabutton" onclick="show2()">I agree</span>
+         <span id="eulabutton" onclick="quit()">I don't agree</span><br><br>
+    </center>
+</div>
+
+<div id="all2">
+    <center>
+        <h1 class="noselect" style="font-size: 24px;">What's the handle of the account you'll be logging in with?</h1>
+        <h1 id="2subheader" class="noselect" style="font-size: 18px;">(this is for your profile shortcut and whatnot)</h1>
+        <br><br><br><br><br><br>
+        <input id="pwbox" type="text" autofocus placeholder="Type your username"><br><br><br><br>
+        <span id="button" onclick="show3()">That's Me</span><br><br>
+
+    </center>
+</div>
+
+<div id="all3">
+    <center>
+        <h1 class="noselect" style="font-size: 30px;">Do we have the right you?</h1>
+        <h1 class="noselect" style="font-size: 18px;">Your profile picture should appear below.</h1>
+        <h1 class="noselect" style="font-size: 14px;">You will have to logout & reset to change this value</h1>
+        <br>
+        <img id="pfp" draggable="false" src="../img/placeholder.png" width="128px" height="128px"><br>
+        <h1 id="unametext" class="noselect" style="font-size: 14px;">@undefined</h1>        
+        <br><br>
+        <span id="button" onclick="show4()">Yes</span>
+        <span id="button" onclick="notMe()">No</span>
+
+    </center>
+</div>
+
+<div id="all4">
+        <center>
+            <h1 class="noselect">Do you want discord integration?</h1>
+            <h1 class="noselect" style="font-size: 18px;">WARNING: Your friends would be able to see if you're slacking off.</h1>
+            <br><br>
+            <span id="eulabutton" onclick="yesDiscord()">Yes</span>
+            <span id="eulabutton" onclick="noDicsord()">No</span><br><br>
+            <br><br><br>
+        </center>
+</div>
+
+<div id="all5">
+        <center>
+            <h1 class="noselect" style="font-size: 24px;">Do you like it round?</h1>
+            <h1 class="noselect" style="font-size: 18px;">Rounded icons are a pressing issue that can cause WW3</h1>
+            <h1 class="noselect" style="font-size: 14px;">Fortunately we aim to make peace and not war</h1>
+            <br><br>
+	    	<img class="modeswitch" id="sq" onclick="selectSquir()" draggable="false" src="squircular.png" width="128px" height="128px">
+            <img class="modeswitch" id="ci" onclick="selectRound()" draggable="false" src="circular.png" width="128px" height="128px">
+            <br><br><br><br>
+            <span id="button" onclick="show6()">Continue</span>    
+        </center>
+</div>
+
+<div id="all6">
+        <center>
+            <h1 class="noselect"> </h1>
+        </center>
+        <webview id="login" src="https://mobile.twitter.com/login" partition="persist:1"></webview>
+</div>
+
+<div id="all7">
+        <center>
+            <h1 class="noselect">That's all we need from you!</h1>
+            <h1 class="noselect" style="font-size: 24px;">(we'll save your settings and restart)</h1>
+            <br><br><br><img draggable="false" id="loadhero2" src="../img/spinner.png">
+        </center>
+</div>
+
+
+<script src="../scripts/nodrop.js"></script>
+<script src="slides.js"></script>
+<script src="../scripts/currentversion.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="noselect">
+<head>
+	<!-- page title, listed in mission control on macOS -->
+	<title id="missctrltxt">Bridgeport Canvas</title>
+
+	<!-- import the main style for the app -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<!-- import the google material icons -->
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+	<link rel="stylesheet" type="text/css" href="css/gIcons.css">
+</head>
+<body>
+
+<!-- app titlebar -->
+<div id="darwin-title-bar" class="noselect"> 
+	<span id="urlbar"></span>
+<span class="material-icons noselect" onclick="window.close()" id="close">close</span> &nbsp;
+</div>
+
+<div id="loadingDevBackground">
+	<div id="loadingDev"></div>
+</div>
+
+</div>
+<!-- webview process, popups are allowed, and it's using partition 1 as a persist. -->
+<webview id="c-agg" allowpopups partition="persist:1" blinkfeatures="WidevineCdm" preload="../scripts/spellcheck.js"></webview>
+<div id="cbd"></div>
+
+
+<!-- importing javascript functions -->
+<script src="scripts/nodrop.js"></script>						<!-- prevents opening files on drag in, idk why it doesn't just do that. -->
+<script src="scripts/unibar.js"></script>						<!-- goes to a specific user page -->
+<script src="scripts/title.js"></script>						<!-- goes to a specific user page -->
+</body>
+</html>

@@ -1,0 +1,1 @@
+devSplah("dynamic.js")

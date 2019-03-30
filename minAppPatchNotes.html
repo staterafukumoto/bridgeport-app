@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>What's new in Bridgeport?</title>
+	<link rel="stylesheet" type="text/css" href="css/pn.css">
+	<!-- <script> const shell = require('electron').shell; </script> -->
+</head>
+<div id="darwin-title-bar"> What's new in Bridgeport? </div>
+<webview id="pnbw" src="https://bppatchnotes.blogspot.com/" partition="persist:1"></webview>
+
+<div id="bottombar">
+
+<span id="ask">Always show this window after updates: </span>
+<div onclick="" class="toggle-on" id="theonlytoggle"></div>
+</div>
+
+<script>
+//------------------------------------------------------ auto show patchnotes
+function aucToggleCheck(){
+	var pnOpt = localStorage["showpatchnotesonupdate"]
+	if(pnOpt == "disabled"){
+		document.getElementById("theonlytoggle").className = "toggle-off"
+		document.getElementById("theonlytoggle").onclick = pnOn
+	} else{
+		document.getElementById("theonlytoggle").className = "toggle-on"
+		document.getElementById("theonlytoggle").onclick = pnOff
+	}
+}
+// localStorage["showpatchnotesonupdate"] == "disabled"
+window.setInterval(aucToggleCheck, 40)
+
+function pnOn(){
+	localStorage["showpatchnotesonupdate"] = "enabled"
+	console.log("pnOn")
+}
+
+function pnOff(){
+	localStorage["showpatchnotesonupdate"] = "disabled"
+	console.log("pnOff")
+}
+
+</script>
+</body>
+</html>

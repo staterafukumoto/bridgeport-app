@@ -1,0 +1,250 @@
+#darwin-title-bar
+{ 
+  -webkit-app-region: drag;
+  height: 22px; 
+  width: calc(100%);
+  background-color: #212121;
+  /*background: linear-gradient(#eceaeb, #d6d4d5);*/
+  position:absolute;
+  left: 0px;
+  top: 0px; 
+  color:white;
+  font-family: -apple-system, BlinkMacSystemFont;
+  font-size: 14px;
+  line-height:22px;
+  font-weight: regular;
+  z-index: 3;
+  /* border-bottom: 1px solid #515151; */
+}
+
+::-webkit-scrollbar {width: 12px; background: #212121}
+::-webkit-scrollbar-thumb {width: 12px; background: #343538}
+
+#darwin-title-bar-min
+{ 
+  -webkit-app-region: drag;
+  height: 38px; 
+  width: calc(100%);
+  background: linear-gradient(#212121, #111);
+  position:absolute;
+  left: 0px;
+  top: 0px; 
+  color:white;
+  font-family: -apple-system, BlinkMacSystemFont;
+  font-size: 14px;
+  line-height:38px;
+  font-weight: regular;
+  z-index: 3;
+}
+
+.dimstatusbar
+{
+  background: #2c2c2c !important;
+}
+
+.noselect 
+{
+    user-select: none; 
+}
+
+#backdrop
+{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display:inline-flex;
+  z-index: -2;
+}
+
+a:link, a:visited 
+{
+  color: white;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: default;
+}
+
+a:hover
+{
+  color: grey;
+  transition: all 0.3s ease;
+}
+
+a:active
+{
+  color: black;
+  transition: all 0.1s ease;
+}
+
+p
+{
+  font-family: -apple-system, BlinkMacSystemFont;
+  left: 25px;
+  right: 25px;
+  color: white;
+  position: absolute;
+  top: 175px;
+  text-align: center;
+  cursor: default; 
+}
+
+#copyright
+{
+  font-family: -apple-system, BlinkMacSystemFont;
+  right: 4px;
+  color: black;
+  position: absolute;
+  bottom: 2px;
+  text-align: right;
+  user-select: none;
+  color: red;
+  cursor: default;
+  display: none;
+}
+
+#hero
+{
+  position: absolute;
+  right: calc(50% - 75px);
+  width: 150px;
+  padding-top: 8px;
+}
+
+#ver_num
+{
+  font-family: -apple-system, BlinkMacSystemFont;
+  font-weight: lighter;
+  color: #adadad;
+  position: absolute;
+  bottom: 2px;
+  border-bottom: 1px solid #adadad;
+  text-align: center;
+  cursor: default;
+}
+
+@keyframes rainbow{
+  5%{color: red;}
+  35%{color: yellow;}
+  65%{color: green;}
+  85%{color: blue;}
+  0%{color: orange;}
+}
+
+.rainbow 
+{
+  animation: rainbow 3s infinite; 
+}
+
+#r-align
+{
+  text-align: right;
+}
+
+#r-alignpver
+{
+  text-align: right;
+}
+
+h2
+{
+  font-family: -apple-system, BlinkMacSystemFont;
+  font-size: 32px;
+  color: white;
+  user-select: none;
+  cursor: default;
+  text-decoration: underline;
+}
+
+h3
+{
+  font-family: -apple-system, BlinkMacSystemFont;
+  font-size: 32px;
+  color: white;
+  user-select: none;
+  cursor: default;
+}
+
+.patchnotes
+{
+  font-family: -apple-system, BlinkMacSystemFont;
+  font-size: 18px;
+  color: white;
+  line-height: 32px;
+  list-style-type: square;
+}
+
+#patchNotesDiv
+{
+  /*background: red;*/
+  position: absolute;
+  left: 0px;
+  top: 22px;
+  height: calc(100% - 22px);
+  width: 100%;
+  overflow: scroll;
+}
+
+#bottom-gradient
+{
+  position: absolute;
+  display: inline;
+  left: 0px;
+  bottom: 0px;
+  height: 12px;
+  width: 100%;
+  background: linear-gradient(transparent, #212121);
+  z-index: 72;
+}
+
+#top-gradient
+{
+  position: absolute;
+  display: inline;
+  left: 0px;
+  top: 22px;
+  height: 12px;
+  width: 100%;
+  background: linear-gradient(#212121, transparent);
+  z-index: 72;
+}
+
+
+#button
+{
+  padding: 5px 75px;
+  background: linear-gradient(#1dcaff, #1da1f2);
+  border-radius: 25px;
+  font-family: -apple-system, BlinkMacSystemFont;
+  transition: 0.1s all ease;
+  cursor: default;
+  color: white;
+  /*box-shadow: 0px 0px 10px #1dcaff;*/
+  user-select: none;
+  display: none;
+}
+
+#button:hover
+{
+ filter: brightness(0.9);
+}
+
+#button:active
+{
+  filter: brightness(0.7);
+}
+
+@keyframes fadeintwo
+{
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#all{
+  animation: fadeintwo 450ms ease-in-out 10ms;
+}
+
+

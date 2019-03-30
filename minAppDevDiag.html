@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Developer Information</title>
+	<link rel="stylesheet" type="text/css" href="css/about.css">
+</head>
+<body bgcolor="black">
+<div id="darwin-title-bar" class="noselect"><center>Developer Information</center></div>
+<br>
+
+
+<!-- <center> -->
+<br>
+<font face="sans-serif" color="#ededed">
+<b>Electron Version: </b>
+<div id="r-align">
+<script id="r-align">
+document.write(process.versions.electron)
+</script>
+</div>
+<br>
+
+<b>Blink Version: </b>
+<div id="r-align">
+<script>
+document.write(process.versions.chrome)
+</script>
+</div>
+<br>
+
+
+<b>Node Version: </b>
+<div id="r-align">
+<script id="r-align">
+document.write(process.versions.node)
+</script>
+</div>
+<br>
+
+<b>Resources Folder: </b>
+<div id="r-align" style="overflow-wrap: break-word;">
+<script id="r-align">
+document.write(process.resourcesPath)
+</script>
+</div>
+<br>
+
+<b>System Type: </b>
+<div id="r-align">
+<script id="r-align">
+document.write(process.platform)
+</script>
+</div>
+<br>
+
+<b>OpenSSL: </b>
+<div id="r-align">
+<script id="r-align">
+document.write(process.versions.openssl)
+</script>
+</div>
+<br>
+<b>Bridgeport</b>
+<div id="r-align">
+<span> Build Number: </span><span id="r-alignpver"><br></span>
+<script>
+	function printver(){
+		document.getElementById("r-alignpver").innerHTML = currentVersionLocal
+	}
+	window.setTimeout(printver, 500)
+</script>
+</div>
+
+<b>Retina Display?: </b>
+<div id="r-align">
+<script id="r-align">
+isRetina.toString()
+</script>
+</div>
+<br>
+
+<center>
+<br><br><br><br>
+<b class="rainbow">
+If you ended up here by accident, don't worry. <br>
+Nothing is broken and you can't break anything here. <br>
+This information is for development and debug purposes.
+</b>
+</font>
+</center>
+
+<script src="scripts/nodrop.js"></script>						<!-- prevents opening files on drag in, idk why it doesn't just do that. -->
+<script src="scripts/currentversion.js"></script>
+<script>
+function focusCheck(){
+	if (document.hasFocus()) {
+    document.getElementById("darwin-title-bar").classList.remove('dimstatusbar')
+} else{
+	document.getElementById("darwin-title-bar").classList.add('dimstatusbar')
+}
+}
+window.setInterval(focusCheck,20)
+</script>
+
+</body>
+</html>
